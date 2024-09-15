@@ -96,7 +96,6 @@ def draw_winner(text):
     draw_txt = WINNER_FONT.render(text, 1, WHITE);
     WIN.blit(draw_txt, (SCREEN_WIDTH/2 - draw_txt.get_width()/2, SCREEN_HEIGHT/2-draw_txt.get_height()/2))
     pygame.display.update()
-    pygame.time.delay(5000)
 
 def main():
     ritchie = pygame.Rect(100, 300, IMAGE_WIDTH, IMAGE_HEIGHT)
@@ -139,6 +138,14 @@ def main():
 
         if winnertxt:
             draw_winner(winnertxt)
+
+            ritchie_bricks.clear()
+            bricky_bricks.clear()
+
+            pygame.time.delay(5000)
+
+            pygame.event.clear(pygame.KEYDOWN)
+
             break
 
         keys_pressed = pygame.key.get_pressed() #tell us currently pressed keys
